@@ -16,6 +16,7 @@ BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(Class::Trigger)
 BuildRequires:  perl(Class::Accessor)
+BuildRequires:  perl(Class::Data::Inheritable)
 BuildRequires:  perl(Clone)
 BuildRequires:  perl(Ima::DBI)
 BuildRequires:  perl(UNIVERSAL::moniker)

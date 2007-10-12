@@ -1,6 +1,6 @@
 %define module  Class-DBI
 %define name    perl-%{module}
-%define version 3.0.16
+%define version 3.0.17
 %define release %mkrel 1
 
 Name:           %{name}

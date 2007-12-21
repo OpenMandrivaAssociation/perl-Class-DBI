@@ -23,6 +23,7 @@ BuildRequires:  perl(UNIVERSAL::moniker)
 BuildRequires:  perl-version
 Requires:       perl-version
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Class::DBI provides a convenient abstraction layer to a database.

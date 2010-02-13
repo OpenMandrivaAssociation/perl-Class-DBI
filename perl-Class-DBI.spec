@@ -1,29 +1,31 @@
-%define module  Class-DBI
-%define name    perl-%{module}
-%define version 3.0.17
-%define release %mkrel 4
+%define upstream_name    Class-DBI
+%define upstream_version 3.0.17
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Simple Database Abstraction
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Class/%{module}-v%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 5
+
+Summary:    Simple Database Abstraction
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-v%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
-BuildRequires:  perl(Class::Trigger)
 BuildRequires:  perl(Class::Accessor)
 BuildRequires:  perl(Class::Data::Inheritable)
+BuildRequires:  perl(Class::Trigger)
 BuildRequires:  perl(Clone)
 BuildRequires:  perl(Ima::DBI)
 BuildRequires:  perl(UNIVERSAL::moniker)
-BuildRequires:  perl-version
-Requires:       perl-version
+BuildRequires:  perl(version)
+
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:       perl(version)
 
 %description
 Class::DBI provides a convenient abstraction layer to a database.
@@ -41,14 +43,14 @@ In short, Class::DBI aims to make it simple to introduce 'best practice' when
 dealing with data stored in a relational database.
 
 %prep
-%setup -q -n %{module}-v%{version} 
+%setup -q -n %{upstream_name}-v%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -62,5 +64,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Class
 %{_mandir}/*/*
-
-

@@ -8,7 +8,7 @@ Release:	9
 Summary:	Simple Database Abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-v%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel

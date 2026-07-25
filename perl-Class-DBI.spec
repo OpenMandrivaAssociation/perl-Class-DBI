@@ -1,15 +1,15 @@
 %define upstream_name    Class-DBI
-%define upstream_version 3.0.17
+%define upstream_version v3.0.17
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	9
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Simple Database Abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-v%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Class-DBI
+Source0:	https://cpan.metacpan.org/authors/id/T/TM/TMTM/Class-DBI-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
